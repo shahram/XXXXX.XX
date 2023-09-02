@@ -7,7 +7,10 @@ const SEPOLIA_PRIVATE_KEY = process.env.SEPOLIA_PRIVATE_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-    solidity: "0.8.19",
+    // solidity: "0.8.19",
+    solidity: {
+        compilers: [{ version: "0.8.19" }, { version: "0.8.6" }],
+    },
     defaultNetwork: "hardhat",
     networks: {
         sepolia: {
@@ -18,6 +21,14 @@ module.exports = {
         localhost: {
             url: "http://127.0.0.1:8545",
             chainId: 31337,
+        },
+    },
+    namedAccounts: {
+        deployer: {
+            default: 0,
+        },
+        user: {
+            default: 1,
         },
     },
 }

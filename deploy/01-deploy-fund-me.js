@@ -1,6 +1,6 @@
-// const { networkConfig } = require("../helper-hardhat-config")
-const helperConfig = require("../helper-hardhat-config")
-const networkConfig = helperConfig.networkConfig
+const { networkConfig } = require("../helper-hardhat-config")
+// const helperConfig = require("../helper-hardhat-config")
+// const networkConfig = helperConfig.networkConfig
 // const { network } = require("hardhat")
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
@@ -9,14 +9,14 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const chainId = await network.config.chainId
 
     log(`!!!!!!!!!!!!!!: ${chainId}`)
-    try {
-        const ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]
-    } catch (error) {
-        console.error(error)
-    }
+    // try {
+    const ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]
+    // } catch (error) {
+    //     console.error(error)
+    // }
     const fundMe = await deploy("FundMe", {
         from: deployer,
-        args: [address],
+        args: [ethUsdPriceFeedAddress],
         log: true,
     })
 }
