@@ -48,6 +48,6 @@ module.exports = {
         noColor: true,
         currency: "USD",
         coinmarketcap: COINMARKETCAP_API_KEY,
-        token: "MATIC",
+        token: "ETH",
     },
 }
