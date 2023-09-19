@@ -9,4 +9,6 @@ typechain-types
 cache
 artifacts
 deployments
+garbage.txt
+gas-reporter.txt
 
